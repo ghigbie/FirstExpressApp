@@ -17,6 +17,11 @@ app.get("/dog", function(req, res){
     res.send("<h1>MEOW!</h1><h2>MEOW!</h2><h3>MEWO!</h3>" );
 });
 
+app.get("*", function(req, res){
+    console.log("YOU ARE A STAR!");
+    
+})
+
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server has started. Yay!!!");
 });
