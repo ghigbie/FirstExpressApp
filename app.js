@@ -17,9 +17,10 @@ app.get("/dog", function(req, res){
     res.send("<h1>MEOW!</h1><h2>MEOW!</h2><h3>MEWO!</h3>" );
 });
 
-app.get("*", function(req, res){
+//the first request that matches, will be used -- order of routes matters
+app.get("*", function(req, res){ //order of routes matters
     console.log("YOU ARE A STAR!");
-    
+    res.send("<h1>You are a STAR!</h1>")
 })
 
 app.listen(process.env.PORT, process.env.IP, function(){
