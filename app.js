@@ -20,7 +20,11 @@ app.get("/dog", function(req, res){
 app.get("/r/:subredditName", function(req, res){
     console.log("SOMEONE ACCESSED A SUBREDDIT");
     res.send("<h1>WELCOME TO A SUB-REDDIT!</h1>");
-    
+});
+
+app.get("r/:subredditName/comments/:id/:title/", function(req, res){
+    console.log("SOMEONE ACCESSED A SPECIFIC SUBREDDIT");
+    res.send("<h1>WELCOME TO THE COMMENTS PAGE</h1>");
 });
 
 //the first request that matches, will be used -- order of routes matters
