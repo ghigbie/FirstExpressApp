@@ -17,6 +17,12 @@ app.get("/dog", function(req, res){
     res.send("<h1>MEOW!</h1><h2>MEOW!</h2><h3>MEWO!</h3>" );
 });
 
+app.get("/r/:subredditName", function(req, res){
+    console.log("SOMEONE ACCESSED A SUBREDDIT");
+    res.send("<h1>WELCOME TO A SUB-REDDIT!</h1>");
+    
+});
+
 //the first request that matches, will be used -- order of routes matters
 app.get("*", function(req, res){ //order of routes matters
     console.log("YOU ARE A STAR!");
