@@ -18,12 +18,21 @@ app.get("/dog", function(req, res){
 });
 
 app.get("/r/:subredditName", function(req, res){
+    console.log(req);
+    console.log(req.params);
     console.log("SOMEONE ACCESSED A SUBREDDIT");
-    res.send("<h1>WELCOME TO A SUB-REDDIT!</h1>");
+    var subreddit = req.params.subredditName;
+    res.send("<h1>WELCOME TO THE " +subreddit+ " SUBREDDIT!</h1>");
 });
 
 app.get("r/:subredditName/comments/:id/:title/", function(req, res){
     console.log("SOMEONE ACCESSED A SPECIFIC SUBREDDIT");
+    var subreddit = req.params.subredditName;
+    var id = req.params.id;
+    var title = req.params.title;
+    console.log("subreddit: " + subreddit);
+    console.log("id: " + id);
+    console.log("title: "+ title);
     res.send("<h1>WELCOME TO THE COMMENTS PAGE</h1>");
 });
 
