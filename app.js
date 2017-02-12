@@ -22,7 +22,7 @@ app.get("/r/:subredditName", function(req, res){
     console.log(req.params);
     console.log("SOMEONE ACCESSED A SUBREDDIT");
     var subreddit = req.params.subredditName;
-    res.send("<h1>WELCOME TO THE " +subreddit+ " SUBREDDIT!</h1>");
+    res.send("<h1>WELCOME TO THE " +subreddit.toUppercase()+ " SUBREDDIT!</h1>");
 });
 
 app.get("r/:subredditName/comments/:id/:title/", function(req, res){
